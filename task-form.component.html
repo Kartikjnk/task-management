@@ -1,0 +1,10 @@
+<!-- task-form.component.html -->
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <input formControlName="title" placeholder="Title">
+  <input formControlName="description" placeholder="Description">
+  <input type="date" formControlName="dueDate">
+  <select formControlName="priority">
+    <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+  </select>
+  <button type="submit">Add Task</button>
+</form>
